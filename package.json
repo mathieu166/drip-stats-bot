@@ -1,0 +1,32 @@
+{
+  "name": "drip-stats-bot",
+  "version": "1.0.0",
+  "description": "A DRIP Call API To access and crunch data for dripmanager dApp",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathieu166/drip-call-api"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.1",
+    "netlify-lambda": "^2.0.14",
+    "serverless-http": "^2.7.0",
+    "web3": "^1.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

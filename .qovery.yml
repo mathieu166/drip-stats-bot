@@ -1,0 +1,13 @@
+---
+application:
+  name: "drip-call-api"
+  project: "drip-call-api"
+  organization: "Mathieu Riendeau"
+  publicly_accessible: true
+  port: 3000
+routers:
+- name: "main-drip-call-api"
+  routes:
+  - application_name: "drip-call-api"
+    paths:
+    - "/*"
