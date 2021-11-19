@@ -1,0 +1,168 @@
+<html>
+<head>
+	<title>Blank Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
+
+    <!-- Optional theme -->
+<!--     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"> -->
+
+<style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+        background-color:rgba(0, 137, 192, 1);
+    }
+    
+    .bgi:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+        background-image: url('https://drip-stats-bot.ngrok.io/background.jpg');
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        background-size: cover;
+        }
+    
+
+
+    .titlebox{
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    </style>
+
+</head>
+<body>
+    <div class="bgi"></div>
+	<div class="container bg">
+        <div class="row" >
+            <div class="col-sm-12">
+                <img src="https://drip-stats-bot.ngrok.io/header-faucet-ranking.png" style="width:600px"/>
+            </div>
+        </div>
+        <div class="row total" style="margin-bottom: 20px; margin-left: 160px;">
+            <div class="col-sm-12"">
+                {total}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="container mainlist">
+                    <div class="row" > 
+                        <div class="col-sm-6">
+                            <div>
+                                <img src="https://drip-stats-bot.ngrok.io/n1.png" style="height:45px"/>
+                                <img src="https://drip-stats-bot.ngrok.io/rank-tsunami.png" style="height:45px"/><br>
+                            </div>
+                            {rank11}{rank12}      
+                            
+                        </div>
+
+                        <div class="col-sm-6">
+                            <img src="https://drip-stats-bot.ngrok.io/n2.png" style="height:45px"/>
+                            <img src="https://drip-stats-bot.ngrok.io/rank-river.png" style="height:45px"/>
+                        </div>
+                        {rank21}{rank22}  
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-12">
+                <div class="container mainlist">
+                    <div class="row row-flex" > 
+                        <div class="col-sm-6">
+                            <div>
+                                <img src="https://drip-stats-bot.ngrok.io/n3.png" style="height:45px"/>
+                                <img src="https://drip-stats-bot.ngrok.io/rank-stream.png" style="height:45px"/>
+                            </div>
+                            {rank31}{rank32} 
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div>
+                                <img src="https://drip-stats-bot.ngrok.io/n4.png" style="height:45px"/>
+                                <img src="https://drip-stats-bot.ngrok.io/rank-splash.png" style="height:45px"/>
+                            </div>
+                            {rank41}{rank42} 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-12">
+                <div class="container mainlist">
+                    <div class="row row-flex" > 
+                        <div class="col-sm-6">
+                            <div>
+                                <img src="https://drip-stats-bot.ngrok.io/n5.png" style="height:45px"/>
+                                <img src="https://drip-stats-bot.ngrok.io/rank-puddle.png" style="height:45px"/>
+                            </div>
+                            {rank51}{rank52} 
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div>
+                                <img src="https://drip-stats-bot.ngrok.io/n6.png" style="height:45px"/>
+                                <img src="https://drip-stats-bot.ngrok.io/rank-bucket.png" style="height:45px"/>
+                            </div>
+                            {rank61}{rank62} 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+        
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-sm-12">
+                <div class="container mainlist">
+                    <div class="row row-flex" > 
+                        <div class="col-sm-6">
+                            <div>
+                                <img src="https://drip-stats-bot.ngrok.io/n7.png" style="height:45px"/>
+                                <img src="https://drip-stats-bot.ngrok.io/rank-droplet.png" style="height:45px"/>
+                            </div>
+                            {rank71}{rank72} 
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div>
+                                <img src="https://drip-stats-bot.ngrok.io/n8.png" style="height:45px"/>
+                                <img src="https://drip-stats-bot.ngrok.io/rank-squirt.png" style="height:45px"/>
+                            </div>
+                            {rank81}{rank82} 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>           
+	</div>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- Current doc JS -->
+    <script src="index.js"></script>
+</body>
+</html>
