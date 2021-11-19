@@ -20,6 +20,10 @@ const URI = `/webhook/${TOKEN}`
 const WEBHOOK_URL = SERVER_URL + URI
 const PORT = process.env.PORT || 3000
 
+const RANK_IMAGE_NAME = 'rankings.jpg'
+const MS_BETWEEN_UPDATES = 10 * 60 * 1000 // 10 MINUTES
+var lastCheck = new Date().getTime() - MS_BETWEEN_UPDATES*2 //Force update on restart
+
 const app = express()
 app.use(bodyParser.json())
 app.use(express.static('public'))
@@ -35,11 +39,7 @@ const init = async () => {
 }
 
 app.get('/getImage', (req, res) => {
-  const query = req.query
-  if(query.chatId){
-    return res.sendFile(__dirname + '/temp/' +query.chatId + '.jpg');
-  }
-  res.send()
+  return res.sendFile(__dirname + '/temp/' + RANK_IMAGE_NAME);
 })
 
 app.post(URI, async (req, res) => {
@@ -58,16 +58,21 @@ app.post(URI, async (req, res) => {
     })
   } else if (text && text === '/show_ranks') {
     try {
-      const stats = await getDepositCounts([
-        1, 10, 50, 100, 500, 1000, 2000, 5000
-      ])
+      const now = new Date().getTime();
+      const nextUpdate = lastCheck + MS_BETWEEN_UPDATES;
+      if(now > nextUpdate){
+        lastCheck = now;
+        const stats = await getDepositCounts([
+          1, 10, 50, 100, 500, 1000, 2000, 5000
+        ])
 
-      await nodeHtmlToImage({
-        output: 'temp/' + chatId + '.jpg',
-        html: buildHtml(stats.data, chatId, __dirname),
-        puppeteerArgs: { args: ['--no-sandbox'] },
-        quality: process.env.IMAGE_QUALITY || 80,
-      });
+        await nodeHtmlToImage({
+          output: 'temp/' + RANK_IMAGE_NAME,
+          html: buildHtml(stats.data, chatId, __dirname),
+          puppeteerArgs: { args: ['--no-sandbox'] },
+          quality: process.env.IMAGE_QUALITY || 80,
+        });
+      }
 
       await axios.post(`${TELEGRAM_API}/sendMessage`, {
         chat_id: chatId,
