@@ -33,7 +33,7 @@ export default (stats, chatId, __dirname) => {
         var result = results[i]
 
         template = template.replace(`{rank${i+1}1}`, textWithFont(`deposits__-__${range}__drip`, '30', '-10'))
-        template = template.replace(`{rank${i+1}2}`, textWithFont(`drippers__-__${result}`, '30', '-10'))
+        template = template.replace(`{rank${i+1}2}`, textWithFont(`drippers______${result}`, '30', '-10'))
     }
 
     template = template.replace(`{total}`, textWithFont(`total_drippers__${total}`, '30', '-10'))
