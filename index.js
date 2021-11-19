@@ -87,7 +87,7 @@ app.post(URI, async (req, res) => {
 
       await axios.post(`${TELEGRAM_API}/sendMessage`, {
         chat_id: chatId,
-        text: 'Please, consider notating to the dev wallet if you enjoy my work'
+        text: 'Please, consider dotations to the dev wallet if you enjoy my work!'
       })
       await axios.post(`${TELEGRAM_API}/sendMessage`, {
         chat_id: chatId,
