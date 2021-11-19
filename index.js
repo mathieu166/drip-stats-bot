@@ -64,7 +64,8 @@ app.post(URI, async (req, res) => {
 
       await nodeHtmlToImage({
         output: 'temp/' + chatId + '.jpg',
-        html: buildHtml(stats.data, chatId, __dirname)
+        html: buildHtml(stats.data, chatId, __dirname),
+        puppeteerArgs: { args: ['--no-sandbox'] },
       });
 
       await axios.post(`${TELEGRAM_API}/sendMessage`, {
