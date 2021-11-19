@@ -37,7 +37,7 @@ const init = async () => {
 app.get('/getImage', (req, res) => {
   const query = req.query
   if(query.chatId){
-    return res.sendFile(__dirname + '/' +query.chatId + '.jpg');
+    return res.sendFile(__dirname + '/temp/' +query.chatId + '.jpg');
   }
   res.send()
 })
@@ -63,10 +63,14 @@ app.post(URI, async (req, res) => {
       ])
 
       await nodeHtmlToImage({
-        output: chatId + '.jpg',
+        output: 'temp/' + chatId + '.jpg',
         html: buildHtml(stats.data, chatId, __dirname)
       });
 
+      await axios.post(`${TELEGRAM_API}/sendMessage`, {
+        chat_id: chatId,
+        text: 'Hang on... '
+      })
       
       await axios.post(`${TELEGRAM_API}/sendPhoto`, {
         chat_id: chatId,
