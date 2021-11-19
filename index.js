@@ -85,6 +85,16 @@ app.post(URI, async (req, res) => {
         photo: SERVER_URL + '/getImage?chatId=' +chatId + '&dynamic=' + Math.random()
       })
 
+      await axios.post(`${TELEGRAM_API}/sendMessage`, {
+        chat_id: chatId,
+        text: 'Please, consider notating to the dev wallet if you enjoy my work'
+      })
+      await axios.post(`${TELEGRAM_API}/sendMessage`, {
+        chat_id: chatId,
+        text: '0x1e4ec21e0643B689d252A1462C8f126156e62c21'
+      })
+
+
     } catch (e) {
       console.log('the error', e)
     }
