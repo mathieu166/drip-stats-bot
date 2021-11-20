@@ -44,6 +44,7 @@ app.get('/getImage', (req, res) => {
 
 app.post(URI, async (req, res) => {
   if(!req.body.message){
+    console.log('Request from unknwon source ', req.get('host'))
     return res.status(400).send({
       message: 'What are you trying to do man!!??'
     });
