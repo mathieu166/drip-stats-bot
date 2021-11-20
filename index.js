@@ -43,6 +43,11 @@ app.get('/getImage', (req, res) => {
 })
 
 app.post(URI, async (req, res) => {
+  if(!req.body.message){
+    return res.status(400).send({
+      message: 'What are you trying to do man!!??'
+    });
+  }
   const chatId = req.body.message.chat.id
   const username = req.body.message.from.username
   const text = req.body.message.text
