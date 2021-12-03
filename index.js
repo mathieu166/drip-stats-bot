@@ -69,7 +69,7 @@ app.post(URI, async (req, res) => {
       if(now > nextUpdate){
         lastCheck = now;
         const stats = await getDepositCounts([
-          1, 10, 50, 100, 500, 1000, 2000, 5000
+          0.9, 10, 50, 100, 500, 1000, 2000, 5000
         ])
 
         await nodeHtmlToImage({
