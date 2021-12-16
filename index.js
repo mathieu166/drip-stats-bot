@@ -106,7 +106,7 @@ app.post(URI, async (req, res) => {
       await axios.post(`${TELEGRAM_API}/sendPhoto`, {
         chat_id: chatId,
         caption: "Ranks",
-        photo: SERVER_URL + '/getImage'
+        photo: SERVER_URL + '/getImage?timestamp='+new Date().getTime()
       })
 
       await axios.post(`${TELEGRAM_API}/sendMessage`, {
